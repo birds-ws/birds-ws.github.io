@@ -66,23 +66,7 @@
         </div>
     </header>
 
-    <!-- This is needed for the collapsibles -->
-    <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-    </script>
 
     <!-- About & Topics-->
     <section class="page-section bg-light text-dark" id="about">
@@ -200,298 +184,377 @@
                                     <div class="col-lg-auto text-left">
                                         <h2 class="text-dark mt-0 text-center">Confirmed Talks and Program</h2>
                                         <hr class="divider dark my-4" />
+                                        <h3 class="text-dark mt-0 text-center">Invited Talks</h3>
                                         <p class="text-dark-75 mb-4">
-                                            Invited Talks:
                                             <ul>
-                                                <li>Ed Fox, Virginia Tech, USA: <em>User Discovery and Exploration in Future Digital Libraries</em></li>
-                                                <li>Tony Russell-Rose, 2Dsearch and Goldsmiths, University of London, UK: <em>Searching, fast and slow</em></li>
-                                                <li>Emanuele Di Buccio, University of Padua, Italy: <em>Data Science and Information Access for Social Research on Technoscientific Issues in the Media</em></li>
-                                                <li>Martin White, Intranet Focus Ltd and University of Sheffield, UK: <em>Understanding and solving the complex IIR challenges of searching enterprise content</em></li>
-                                                <li>Lorraine Goeuriot, Univ. Grenoble Alpes, France: <em>Exploiting clinical data to build patients trajectories</em></li>
-                                                <li>Tobias Eljasik-Swoboda et al, Fernuniversität Hagen, Germany: <em>Querying by Example Using Bootstrapped Explainable Text Categorization in Emergent Knowledge-Domains</em></li>
-                                            </ul>
+                                                <li><a href="https://fox.cs.vt.edu/foxinfo.html">Ed Fox, Virginia Tech, USA</a>: <em>User Discovery and Exploration in Future Digital Libraries</em>
+                                                    <button type="button" class="collapsible">[+] Abstract </button>
+                                                    <div class="collapsiblecontent">
+                                                        <p>
+                                                            Since the early 1990s, digital libraries have been devised to support particular communities (societies) engaged in varied activities (scenarios) with a focus on specialized types of content (structured streams of data, locatable and presentable using spaces – vector/probability/topological and 1D/2D/3D). Whether these efforts involve already known items, or finding new/additional items (often through searching/browsing/visualizing), it is typical for the digital libraries to support such discovery and exploration. The 5S (societies/scenarios/spaces/structures/streams) framework facilitates devising, populating, and using such digital libraries, with appropriate mixes of data and information, guided by various types of knowledge. We explain how key personas can work with future digital libraries, such as curators, data scientists, and those with information needs. We describe a new approach to devising such extensible information systems that integrate information retrieval, information science, and data science approaches and requirements, involving teams of UX, subject matter experts, data scientists, and DevOps personnel. We also discuss technology transfer methods, with customer discovery of the ecosystem of users (societies), to help ensure the relevance and utility of such digital libraries.
+                                                        </p>
+                                                    </div> <!-- collapsiblecontent -->
+                                                    <br/><br/></li>
+                                                    <li><a href="https://www.gold.ac.uk/computing/staff/t-russell-rose/">Tony Russell-Rose, 2Dsearch and Goldsmiths, University of London, UK</a>: <em>Searching, fast and slow</em>
+                                                        <button type="button" class="collapsible">[+] Abstract </button>
+                                                        <div class="collapsiblecontent">
+                                                            <p>
+                                                                Knowledge workers such as information professionals, legal researchers and librarians need to create and execute search strategies that are comprehensive, transparent, and reproducible. The traditional solution is to use command-line query builders offered by proprietary database vendors. However, these are based on a paradigm that dates from the days when databases could be accessed only via text-based terminals and command-line syntax. In this talk, we explore alternative approaches based on a visual paradigm in which users express concepts as objects on an interactive canvas. This offers a more intuitive UX that eliminates error, makes the query semantics more transparent, and offers new ways to collaborate and share best practices.
+                                                            </p>
+                                                        </div> <!-- collapsiblecontent -->
+                                                        <br/><br/></li>
+                                                        <li><a href="http://www.dei.unipd.it/~dibuccio/">Emanuele Di Buccio, University of Padua, Italy<a>: <em>Data Science and Information Access for Social Research on Technoscientific Issues in the Media</em>
+                                                            <button type="button" class="collapsible">[+] Abstract </button>
+                                                            <div class="collapsiblecontent">
+                                                                <p>
+                                                                    Social Science Research can benefit from the massive amount of digitized content and the heterogeneous online sources available nowadays. An example is research activities in Science and Technology Studies, e.g., those investigating the presence and the perception of Science and Technology issues in the Media.
+                                                                    Methodologies rooted in Data Science and Information Access can play a crucial role in supporting these research activities. In this context, users are specialists in Social Sciences, and their task is to investigate research hypotheses.
+                                                                    This talk is about some of the challenges arising when supporting social scientists in their investigations on the media's discourse on technoscientific issues. The presentation will focus on a methodology and a system designed to support access and exploration of longitudinal corpora through diverse representations and diverse forms of user-system interaction.
+                                                                </p>
+                                                            </div> <!-- collapsiblecontent -->
+                                                            <br/><br/></li>
+                                                            <li><a href="http://intranetfocus.com/about/martin-white/">Martin White, Intranet Focus Ltd and University of Sheffield, UK</a>: <em>Understanding and solving the complex IIR challenges of searching enterprise content</em>
+                                                                <button type="button" class="collapsible">[+] Abstract </button>
+                                                                <div class="collapsiblecontent">
+                                                                    <p>
+                                                                        It is not unusual to find that organisations need to search across 200 million+ files in multiple formats and in perhaps nine languages, and yet rarely is any training provided for what is almost always a business-critical search. There is also the need to support both known-item and exploratory search, and often groups of professional searchers within the organisation need to undertake high-recall searches. Very little research has been carried out into what is commonly described as ‘enterprise search’. This paper will examine the reasons behind this lack of research, summarise the emerging appreciation of how search is undertaken inside an organisation and suggest areas where it would be of value to the IR community and to the organisation to undertake research.
+                                                                    </p>
+                                                                </div> <!-- collapsiblecontent -->
+                                                                <br/><br/></li>
+                                                                <li><a href="http://mrim.imag.fr/User/lorraine.goeuriot/">Lorraine Goeuriot, Univ. Grenoble Alpes, France</a>: <em>Exploiting clinical data to build patients trajectories</em>
+                                                                    <button type="button" class="collapsible">[+] Abstract </button>
+                                                                    <div class="collapsiblecontent">
+                                                                        <p>
+                                                                            Medical data is generated and stored throughout a patient’s life. Exploiting such an amount of heterogeneous information can hardly be done by humans, but recent advances in artificial intelligence now allows to model patients trajectories, and use them to predict certain factors in the future. In this talk, I will present recent work on prediction from patient trajectories with two use cases : sleep apnea disorders and hospitalization of GPs patients.
+                                                                        </p>
+                                                                    </div> <!-- collapsiblecontent -->
+                                                                    <br/><br/></li>
+                                                                    <li>Tobias Eljasik-Swoboda et al, Fernuniversität Hagen, Germany: <em>Querying by Example Using Bootstrapped Explainable Text Categorization in Emergent Knowledge-Domains</em>
+                                                                        <button type="button" class="collapsible">[+] Abstract </button>
+                                                                        <div class="collapsiblecontent">
+                                                                            <p>
+                                                                                Text Categorization (TC) is the act of assigning text documents to predefined categories. For instance, to distinguish between pro- and contra arguments for a specific topic. The automation of TC can either be done by using fixed rules or by machine learning. The difference between machine learning and programming is, that in machine learning, the machine creates its own program based on sample data. In the context of TC, these are example assignments of documents to categories called Target Function. <br/>
+                                                                                Machine Learning based Text Categorization (MLTC) can be used for many different applications. One such application is Argument Mining (AM), the finding of pro- and contra- arguments in large text corpora. Other examples include the assignment of news articles to specific categories, spam filtering, detection of offensive language in internet communications or the detection of user intent when interacting with a voice assistant like Amazon’s Alexa or Apple’s Siri.
+                                                                                MLTC is already widely applied. However, whenever a new application is developed that requires MLTC features, four fundamental problem fields arise. Firstly, the technical integration effort is high. This means that multiple prerequisites must be available, and programmers need to be familiar with details about the MLTC process. Secondly, the high effort required for the collection of examples for the MLTC process to learn from as well as providing manually crafted resources such as lists of relevant words for specific topics. Thirdly, according to the GDRP, MLTC systems operated in the EU that impact European citizens must be explainable. Generating explanations for the behavior of machine learning is no trivial task and an area of active research. A fourth problem field is semantic shift and the emergence of new knowledge. Previous resources and examples can become obsolete with future developments.<br/>
+                                                                                To overcome these problem fields, our previous work combined two research frameworks, the Design-oriented Information Systems Research methodology (DIRS) and the Research Framework for Information Systems Research (RFISR) to create insight into the problem fields and create artifacts that can overcome these problems. After assessing the state of the art in relevant areas of science and technology, a formal problem model was constructed. Capitalizing on recent trends in information technology, such as Big Data and Cloud Computing, a microservice oriented application to quickly provide explainable MLTC was designed and prototypically implemented as microservice oriented application. This prototype can even function without a target function by using word embeddings, and other recently emerged technologies. The created suite of microservices has already been evaluated in five different applications that apply MLTC. Even though the evaluation shows slightly inferior effectiveness to technologies that are fine tuned for their specific problems, the created system can be applied to these different problems in two different natural languages in a matter of minutes. Different to the existing most effective applications, the created system also generates explanations for its decisions. A qualitative evaluation and subsequent survey have already shown that the explanations are of a high quality and understood by a majority of survey participants. The developed prototype also possesses the ability to create new categories to organize documents when new knowledge emerges. <br/>
+                                                                                This capability of requiring little to no examples and other manually provided resources is well suited for scenarios in which said examples are hard to obtain. One such example is query by example information retrieval. This paper investigates how the developed MLTC microservices can be used for on-the-fly query construction that supports result sets including relevance feedback and facetted browsing. A unique characteristic of this information retrieval approach is its ability to generate explanations stating reasons why certain results are elements of the result set. Its applicability for facetted browsing also means, that the approach is well suited for information filtering applications.
+
+                                                                            </p>
+                                                                        </div> <!-- collapsiblecontent -->
+                                                                        <br/><br/></li>
+                                                                        <li>Kevin Berwind, Fernuniversität Hagen, Germany: <em>Design of use case diagrams and personas based on the CRISP4BigData process / Conceptual Design and Implementation of a graphical user interface for CRISP4BigData </em>
+                                                                            <button type="button" class="collapsible">[+] Abstract </button>
+                                                                            <div class="collapsiblecontent">
+                                                                                <p>
+                                                                                    We give an overview of the current state of research regarding the persistence and reproduction of meta-information and artifacts used during a Big Data analysis process. The collection of meta information and artifacts as well as the business modeling of the analysis process are performed via appropriate user interfaces based on the
+                                                                                    Business Process Model and Notation and provided as packages via an automation interface. Based on requirements for Data Scientists from the industry, which were discussed and debated in an expert interview at the EGI Community Forum 2015. The requirements discussed were converted into various user stereotypes and serve as the basis for creating initial use case diagrams that also distinguish the technical perspectives of the respective user stereotypes with the help of personas. The use case diagrams are enriched by the individual phases and tasks of the Cross Industry Standard Process for Big Data Reference Model (CRISP4BigData) which was already presented at the Collaborative European Research Conference 2016 (CERC2016). Based on these use case diagrams and personas, concrete proposals for a software architecture will be derived in further work.<br/>
+                                                                                    In the second talk we present the current of the research work on the design and implementation of a graphical user interface based on the CRISP4BigData use cases with respect to technical requirements of the model-view-controller approach and the Symfony PHP framework developed. At the same time, the CRISP4BigData UI is to be integrated into the Knowledge Management Ecosystem Portal in order to extend the portal's functionalities and thus map added value. The Knowledge Management Ecosystem Portal (KM-EP) is based on the approach of Virtual Research Environments to solve problems around content and knowledge management application scenarios. The KM-EP already provides solutions for Centralized Digital Library and Media Archive, Unified Access Rights, Detailed Metadata, Faceted Search with Categorization, Open Contribution. The CRISP4BigData UI is intended to take up this idea and provide an automated and guided documentation process for Big Data analyses and their (process) meta information and artifacts. The collection of meta information and artifacts as well as the business modeling of the analysis process are performed via appropriate user interfaces based on the
+                                                                                    Business Process Model and Notation and provided as packages via an automation interface.
+                                                                                </p>
+                                                                            </div> <!-- collapsiblecontent -->
+                                                                            <br/><br/></li>
+                                                                        </ul>
+
+                                                                    </p>
+                                                                    <!-- This is needed for the collapsibles -->
+                                                                    <script>
+                                                                    var coll = document.getElementsByClassName("collapsible");
+                                                                    var i;
+
+                                                                    for (i = 0; i < coll.length; i++) {
+                                                                        coll[i].addEventListener("click", function() {
+                                                                            this.classList.toggle("active");
+                                                                            var content = this.nextElementSibling;
+                                                                            if (content.style.display === "block") {
+                                                                                content.style.display = "none";
+                                                                            } else {
+                                                                                content.style.display = "block";
+                                                                            }
+                                                                        });
+                                                                    }
+                                                                    </script>
+
+                                                                    <h3 class="text-dark mt-0 text-center">Accepted Papers</h3>
+                                                                    <p class="text-dark-75 mb-4">
+                                                                        <ul>
+                                                                            <li>Morshed Adnan, Matthias Hemmje and Michael Alexander Kaufmann. Social Media Mining to Study Social User Groups by Visualizing Tweet Clusters using Word2Vec, PCA and K-Means</li>
+                                                                            <li>Mahmoud Artemi and Haiming Liu. A User Study on User's Attention for an Interactive Content-based Image Search System</li>
+                                                                            <li>Stefan Wagenpfeil, Felix Engel, Paul McKevitt and Matthias Hemmje. Semantic Query Construction and Result Representation based on Graph Codes</li>
+                                                                            <li>Nicholas Collis and Ingo Frommholz. AQUACOLD: A Novel Crowdsourced Linked Data Question Answering System</li>
+                                                                            <li>Ghadeer Abuoda, Chad Hendrix and Stuart Campo. Automatic Tag Recommendation for the UN Humanitarian Data Exchange</li>
+                                                                            <li>Thoralf Reis, Sebastian Bruchhaus, Binh Vu, Marco X. Bornschlegl and Matthias L. Hemmje. Towards Modeling AI-based User Empowerment for Visual Big Data Analysis</li>
+                                                                        </ul>
+
+                                                                    </p>
+                                                                    <h3 class="text-dark mt-0 text-center">Tentative Schedule and Registration</h3>
+                                                                    <p class="text-dark-75 mb-4">
+                                                                        BIRDS will take place in two sessions on <b>March 19, 2021</b>:
+                                                                        <ul>
+                                                                            <li><b>Session 1 Begin:</b> 0:00 (PDT), 2:00 (CDT), 3:00 (EDT), 7:00 (UTC/GMT), 8:00 (CET), 15:00 (CST), 16:00 (JST), 18:00 (AEDT), 20:00 (NZDT)</li>
+                                                                            <li><b>Session 1 End:</b> 5:00 (PDT), 7:00 (CDT), 8:00 (EDT), 12:00 (UTC/GMT), 13:00 (CET), 20:00 (CST), 21:00 (JST), 23:00 (AEDT), 0:00 (NZDT March 20)</li>
+                                                                            <li><b>Session 2 Begin:</b> 7:00 (PDT), 9:00 (CDT), 10:00 (EDT), 14:00 (UTC/GMT), 15:00 (CET), 22:00 (CST), 23:00 (JST), 1:00 (AEDT March 20), 3:00 (NZDT March 20)</li>
+                                                                            <li><b>Session 2 End:</b> 11:00 (PDT), 13:00 (CDT), 14:00 (EDT), 18:00 (UTC/GMT), 19:00 (CET), 2:00 (CST, March 20), 3:00 (JST, March 20), 05:00 (AEDT March 20), 07:00 (NZDT March 20)</li>
+                                                                        </ul>
+                                                                        To register, please visit the <a href="https://web.cvent.com/event/c718c2f6-51e3-4f11-bd86-625d0ba8fb2e/summary">CHIIR registration page</a>. The CHIIR registration includes all workshops, incl. BIRDS. Please allow a 24-hour processing time of your registration and for sending access data.
+                                                                    </p>
+                                                                    <br/>
+                                                                    <p class="text-dark-75 mb-4">Tentative schedule.  Please note there might be minor changes to the schedule.</p>
+                                                                    <p class="text-dark-75 mb-4" id="programPara"></p>
+                                                                    <p class="text-dark-75 mb-4">
+                                                                        <table id="programTable">
+                                                                            <tbody id="programBody"></tbody>
+                                                                        </table>
+                                                                        <script>
+                                                                        // The schdule. Times are UTC.
+                                                                        const schedule = [
+                                                                            {
+                                                                                "Time": "07:00",
+                                                                                "Talk": "Introduction and Welcome"
+                                                                            },
+                                                                            {
+                                                                                "Time": "07:15",
+                                                                                "Talk": "Emanuele Di Buccio: Data Science and Information Access for Social Research on Technoscientific Issues in the Media (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "07:45",
+                                                                                "Talk": "Morshed Adnan, Matthias Hemmje and Michael Alexander Kaufmann. Social Media Mining to Study Social User Groups by Visualizing Tweet Clusters using Word2Vec, PCA and K-Means (full paper)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "08:10",
+                                                                                "Talk": "BREAK"
+                                                                            },
+                                                                            {
+                                                                                "Time": "08:40",
+                                                                                "Talk": "Lorraine Goeuriot: Exploiting clinical data to build patients trajectories (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "09:10",
+                                                                                "Talk": "Mahmoud Artemi and Haiming Liu. A User Study on User's Attention for an Interactive Content-based Image Search System (full paper)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "09:35",
+                                                                                "Talk": "BREAK"
+                                                                            },
+                                                                            {
+                                                                                "Time": "10:05",
+                                                                                "Talk": "Martin White: Understanding and solving the complex IIR challenges of searching enterprise content (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "10:35",
+                                                                                "Talk": "Stefan Wagenpfeil, Felix Engel, Paul McKevitt and Matthias Hemmje. Semantic Query Construction and Result Representation based on Graph Codes (full paper)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "11:00",
+                                                                                "Talk": "BREAK"
+                                                                            },
+                                                                            {
+                                                                                "Time": "11:15",
+                                                                                "Talk": "Tobias Eljasik-Swoboda: Querying by Example Using Bootstrapped Explainable Text Categorization in Emergent Knowledge-Domains (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "",
+                                                                                "Talk": "SESSION BREAK"
+                                                                            },
+                                                                            {
+                                                                                "Time": "14:00",
+                                                                                "Talk": "Welcome Back!"
+                                                                            },
+                                                                            {
+                                                                                "Time": "14:05",
+                                                                                "Talk": "Ed Fox: User Discovery and Exploration in Future Digital Libraries (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "14:35",
+                                                                                "Talk": "Thoralf Reis, Sebastian Bruchhaus, Binh Vu, Marco X. Bornschlegl and Matthias L. Hemmje. Towards Modeling AI-based User Empowerment for Visual Big Data Analysis (short paper)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "14:50",
+                                                                                "Talk": "BREAK"
+                                                                            },
+                                                                            {
+                                                                                "Time": "15:20",
+                                                                                "Talk": "Tony Russell-Rose: Searching, fast and slow (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "15:50",
+                                                                                "Talk": "Ghadeer Abuoda, Chad Hendrix and Stuart Campo. Automatic Tag Recommendation for the UN Humanitarian Data Exchange (short paper)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "16:05",
+                                                                                "Talk": "BREAK"
+                                                                            },
+                                                                            {
+                                                                                "Time": "16:20",
+                                                                                "Talk": "Kevin Berwind. Design of use case diagrams and personas based on the CRISP4BigData process /  Conceptual Design and Implementation of a graphical user interface for CRISP4BigData (invited talk)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "16:50",
+                                                                                "Talk": "Nicholas Collis and Ingo Frommholz. AQUACOLD: A Novel Crowdsourced Linked Data Question Answering System (full paper)"
+                                                                            },
+                                                                            {
+                                                                                "Time": "17:15",
+                                                                                "Talk": "Wrap-up / Closing"
+                                                                            }
+                                                                        ];
+
+                                                                        function loadTableData(items) {
+                                                                            var DateTime = luxon.DateTime;
+                                                                            const pTable = document.getElementById("programTable");
+                                                                            const pProgram = document.getElementById("programPara");
+                                                                            var head = pTable.createTHead();
+                                                                            let rowH = head.insertRow(0);
+                                                                            let timeH = rowH.insertCell(0);
+                                                                            let timeU = rowH.insertCell(1);
+                                                                            let talkH = rowH.insertCell(2);
+                                                                            let localZone = DateTime.local().zoneName;
+                                                                            pProgram.innerHTML= "Your browser timezone is ".concat(localZone, ".")
+                                                                            timeH.innerHTML = "<b>Time".concat(" (", localZone, ")</b>");
+                                                                            timeU.innerHTML = "<b>Time (UTC/GMT)</b>";
+                                                                            talkH.innerHTML = "<b>Talk</b>";
+
+                                                                            const table = document.getElementById("programBody");
+                                                                            items.forEach( item => {
+                                                                                if (item.Time) {
+                                                                                    let row = table.insertRow();
+                                                                                    let time = row.insertCell(0);
+                                                                                    let timeUTC = row.insertCell(1);
+                                                                                    let utcTime = new DateTime.fromISO("2021-03-19T".concat(item.Time), { zone: "UTC" });
+                                                                                    timeUTC.innerHTML = utcTime.toLocaleString(DateTime.TIME_SIMPLE);
+                                                                                    //let t = utc.setZone("Europe/Paris");
+                                                                                    //let t = utc.setZone("America/Los_Angeles");
+                                                                                    let t = utcTime.setZone(localZone);
+                                                                                    console.log(t.zoneName);
+                                                                                    time.innerHTML = t.toLocaleString(DateTime.TIME_SIMPLE); //=> '11:32 AM';
+                                                                                    let talk = row.insertCell(2);
+                                                                                    talk.innerHTML = item.Talk;
+                                                                                }
+                                                                                else {
+                                                                                    let row = table.insertRow();
+                                                                                    row.insertCell(0);
+                                                                                    row.insertCell(1);
+                                                                                    let talk = row.insertCell(2);
+                                                                                    talk.innerHTML = item.Talk;
+                                                                                }
+                                                                            });
+                                                                        }
+                                                                        loadTableData(schedule);
+                                                                        </script>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+
+                                                        <!-- Submission-->
+                                                        <!--
+                                                        <section class="page-section bg-light2 text-dark" id="submission">
+                                                        <div class="container">
+                                                        <div class="row justify-content-center">
+                                                        <div class="col-lg-auto text-left">
+                                                        <h2 class="text-dark mt-0 text-center">Submission and Dates</h2>
+                                                        <hr class="divider dark my-4" />
+                                                        <p class="text-dark-75 mb-4">
+                                                        We are calling for <em>long (12 pages)</em> and <em>short research papers (6 pages)</em> as well
+                                                        as <em>position papers (6 pages)</em> describing new research ideas.
+                                                    </p>
+                                                    <p class="text-dark-75 mb-4">
+                                                    Authors of accepted papers will be invited to present their papers orally
+                                                    at the online workshop as short or long presentation.
+                                                </p>
+                                                <p class="text-dark-75 mb-4">
+                                                As we plan to publish the proceedings with <a href="http://ceur-ws.org">CEUR Workshop Proceedings</a>, all
+                                                papers should be formatted in the <a href="https://ceurws.wordpress.com/2020/03/31/ceurws-publishes-ceurart-paper-style/">One-column CEURART style</a>.
+                                            </p>
+                                            <p class="text-dark-75 mb-4">
+                                            Please adhere to a page limit of <em>12 pages excluding references</em> for long
+                                            papers and <em>6 pages excluding references</em> for short and position papers.  Submissions will
+                                            be peer-reviewed by at least three members of the programme committee.
                                         </p>
                                         <p class="text-dark-75 mb-4">
-                                            Accepted Papers:
-                                            <ul>
-                                                <li>Morshed Adnan, Matthias Hemmje and Michael Alexander Kaufmann. Social Media Mining to Study Social User Groups by Visualizing Tweet Clusters using Word2Vec, PCA and K-Means</li>
-                                                <li>Mahmoud Artemi and Haiming Liu. A User Study on User's Attention for an Interactive Content-based Image Search System</li>
-                                                <li>Stefan Wagenpfeil, Felix Engel, Paul McKevitt and Matthias Hemmje. Semantic Query Construction and Result Representation based on Graph Codes</li>
-                                                <li>Nicholas Collis and Ingo Frommholz. AQUACOLD: A Novel Crowdsourced Linked Data Question Answering System</li>
-                                                <li>Ghadeer Abuoda, Chad Hendrix and Stuart Campo. Automatic Tag Recommendation for the UN Humanitarian Data Exchange</li>
-                                                <li>Thoralf Reis, Sebastian Bruchhaus, Binh Vu, Marco X. Bornschlegl and Matthias L. Hemmje. Towards Modeling AI-based User Empowerment for Visual Big Data Analysis</li>
-                                            </ul>
-
-                                        </p>
-                                        <p class="text-dark-75 mb-4">
-                                            BIRDS will take place in two sessions on March 19, 2021:
-                                            <ul>
-                                                <li><b>Session 1 Begin:</b> 0:00 (PDT), 2:00 (CDT), 3:00 (EDT), 7:00 (UTC/GMT), 8:00 (CET), 15:00 (CST), 16:00 (JST), 18:00 (AEDT), 20:00 (NZDT)</li>
-                                                <li><b>Session 1 End:</b> 5:00 (PDT), 7:00 (CDT), 8:00 (EDT), 12:00 (UTC/GMT), 13:00 (CET), 20:00 (CST), 21:00 (JST), 23:00 (AEDT), 0:00 (NZDT March 20)</li>
-                                                <li><b>Session 2 Begin:</b> 7:00 (PDT), 9:00 (CDT), 10:00 (EDT), 14:00 (UTC/GMT), 15:00 (CET), 22:00 (CST), 23:00 (JST), 1:00 (AEDT March 20), 3:00 (NZDT March 20)</li>
-                                                <li><b>Session 2 End:</b> 11:00 (PDT), 13:00 (CDT), 14:00 (EDT), 18:00 (UTC/GMT), 19:00 (CET), 2:00 (CST, March 20), 3:00 (JST, March 20), 05:00 (AEDT March 20), 07:00 (NZDT March 20)</li>
-                                            </ul>
-                                            To register, please visit the <a href="https://web.cvent.com/event/c718c2f6-51e3-4f11-bd86-625d0ba8fb2e/summary">CHIIR registration page</a>. The CHIIR registration includes all workshops, incl. BIRDS. Please allow a 24-hour processing time of your registration and for sending access data.
-                                        </p>
-                                        <br/>
-                                        <h2 class="text-dark mt-0 text-center">Tentative Schedule</h2>
-                                        <p class="text-dark-75 mb-4">Workshop Date: <b>March 19, 2021</b>.  Please note there might be minor changes to the schedule.</p>
-                                        <p class="text-dark-75 mb-4" id="programPara"></p>
-                                        <p class="text-dark-75 mb-4">
-                                            <table id="programTable">
-                                                <tbody id="programBody"></tbody>
-                                            </table>
-                                            <script>
-                                            // The schdule. Times are UTC.
-                                            const schedule = [
-                                                {
-                                                    "Time": "07:00",
-                                                    "Talk": "Introduction and Welcome"
-                                                },
-                                                {
-                                                    "Time": "07:15",
-                                                    "Talk": "Emanuele Di Buccio: Data Science and Information Access for Social Research on Technoscientific Issues in the Media (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "07:45",
-                                                    "Talk": "Morshed Adnan, Matthias Hemmje and Michael Alexander Kaufmann. Social Media Mining to Study Social User Groups by Visualizing Tweet Clusters using Word2Vec, PCA and K-Means (full paper)"
-                                                },
-                                                {
-                                                    "Time": "08:10",
-                                                    "Talk": "BREAK"
-                                                },
-                                                {
-                                                    "Time": "08:40",
-                                                    "Talk": "Lorraine Goeuriot: Exploiting clinical data to build patients trajectories (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "09:10",
-                                                    "Talk": "Mahmoud Artemi and Haiming Liu. A User Study on User's Attention for an Interactive Content-based Image Search System (full paper)"
-                                                },
-                                                {
-                                                    "Time": "09:35",
-                                                    "Talk": "BREAK"
-                                                },
-                                                {
-                                                    "Time": "10:05",
-                                                    "Talk": "Martin White: Understanding and solving the complex IIR challenges of searching enterprise content (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "10:35",
-                                                    "Talk": "Thoralf Reis, Sebastian Bruchhaus, Binh Vu, Marco X. Bornschlegl and Matthias L. Hemmje. Towards Modeling AI-based User Empowerment for Visual Big Data Analysis (short paper)"
-                                                },
-                                                {
-                                                    "Time": "10:50",
-                                                    "Talk": "BREAK"
-                                                },
-                                                {
-                                                    "Time": "11:05",
-                                                    "Talk": "Tobias Eljasik-Swoboda: Querying by Example Using Bootstrapped Explainable Text Categorization in Emergent Knowledge-Domains (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "",
-                                                    "Talk": "SESSION BREAK"
-                                                },
-                                                {
-                                                    "Time": "14:00",
-                                                    "Talk": "Welcome Back!"
-                                                },
-                                                {
-                                                    "Time": "14:05",
-                                                    "Talk": "Ed Fox: User Discovery and Exploration in Future Digital Libraries (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "14:35",
-                                                    "Talk": "Ghadeer Abuoda, Chad Hendrix and Stuart Campo. Automatic Tag Recommendation for the UN Humanitarian Data Exchange (short paper)"
-                                                },
-                                                {
-                                                    "Time": "14:50",
-                                                    "Talk": "BREAK"
-                                                },
-                                                {
-                                                    "Time": "15:20",
-                                                    "Talk": "Tony Russell-Rose: Searching, fast and slow (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "15:50",
-                                                    "Talk": "Stefan Wagenpfeil, Felix Engel, Paul McKevitt and Matthias Hemmje. Semantic Query Construction and Result Representation based on Graph Codes (full paper)"
-                                                },
-                                                {
-                                                    "Time": "16:15",
-                                                    "Talk": "BREAK"
-                                                },
-                                                {
-                                                    "Time": "16:30",
-                                                    "Talk": "Kevin Berwind. Design of use case diagrams and personas based on the CRISP4BigData process /  Conceptual Design and Implementation of a graphical user interface for CRISP4BigData (invited talk)"
-                                                },
-                                                {
-                                                    "Time": "17:00",
-                                                    "Talk": "Nicholas Collis and Ingo Frommholz. AQUACOLD: A Novel Crowdsourced Linked Data Question Answering System (full paper)"
-                                                },
-                                                {
-                                                    "Time": "17:25",
-                                                    "Talk": "Wrap-up / Closing"
-                                                }
-                                            ];
-
-                                            function loadTableData(items) {
-                                                var DateTime = luxon.DateTime;
-                                                const pTable = document.getElementById("programTable");
-                                                const pProgram = document.getElementById("programPara");
-                                                var head = pTable.createTHead();
-                                                let rowH = head.insertRow(0);
-                                                let timeH = rowH.insertCell(0);
-                                                let timeU = rowH.insertCell(1);
-                                                let talkH = rowH.insertCell(2);
-                                                let localZone = DateTime.local().zoneName;
-                                                pProgram.innerHTML= "Your browser timezone is ".concat(localZone, ".")
-                                                timeH.innerHTML = "<b>Time".concat(" (", localZone, ")</b>");
-                                                timeU.innerHTML = "<b>Time (UTC/GMT)</b>";
-                                                talkH.innerHTML = "<b>Talk</b>";
-
-                                                const table = document.getElementById("programBody");
-                                                items.forEach( item => {
-                                                    if (item.Time) {
-                                                        let row = table.insertRow();
-                                                        let time = row.insertCell(0);
-                                                        let timeUTC = row.insertCell(1);
-                                                        let utcTime = new DateTime.fromISO("2021-03-19T".concat(item.Time), { zone: "UTC" });
-                                                        timeUTC.innerHTML = utcTime.toLocaleString(DateTime.TIME_SIMPLE);
-                                                        //let t = utc.setZone("Europe/Paris");
-                                                        //let t = utc.setZone("America/Los_Angeles");
-                                                        let t = utcTime.setZone(localZone);
-                                                        console.log(t.zoneName);
-                                                        time.innerHTML = t.toLocaleString(DateTime.TIME_SIMPLE); //=> '11:32 AM';
-                                                        let talk = row.insertCell(2);
-                                                        talk.innerHTML = item.Talk;
-                                                    }
-                                                    else {
-                                                        let row = table.insertRow();
-                                                        row.insertCell(0);
-                                                        row.insertCell(1);
-                                                        let talk = row.insertCell(2);
-                                                        talk.innerHTML = item.Talk;
-                                                    }
-                                                });
-                                            }
-                                            loadTableData(schedule);
-                                            </script>
-                                        </div>
-                                    </div>
+                                        To submit your paper, please use our <a href="https://easychair.org/my/conference?conf=birds2021">Easychair submission link</a>.
+                                    </p>
                                 </div>
-                            </section>
+                            </div>
+                            <h3 class="text-dark mt-0 text-center">Important Dates</h3>
+                            <p class="text-dark-75 mb-4">
+                            <b>Submission Deadline:</b> <s>February 1, 2021</s> February 8, 2021 AoE  <b>extended!</b><br/>
+                            <b>Notification:</b>  asap<br/>
+                            <b>Camera-ready:</b>  March 16, 2021<br/>
+                            <b>Workshop:</b>  March 19, 2021 (online)<br/>
+                        </p>
+                    </div>
+                </section>
+            -->
 
-
-                            <!-- Submission-->
-                            <!--
-                            <section class="page-section bg-light2 text-dark" id="submission">
-                            <div class="container">
-                            <div class="row justify-content-center">
-                            <div class="col-lg-auto text-left">
-                            <h2 class="text-dark mt-0 text-center">Submission and Dates</h2>
+            <!-- PC -->
+            <section class="page-section bg-light3 text-dark" id="organizers">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-auto text-left">
+                            <h2 class="text-dark mt-0 text-center">Workshop Organizers</h2>
                             <hr class="divider dark my-4" />
                             <p class="text-dark-75 mb-4">
-                            We are calling for <em>long (12 pages)</em> and <em>short research papers (6 pages)</em> as well
-                            as <em>position papers (6 pages)</em> describing new research ideas.
-                        </p>
-                        <p class="text-dark-75 mb-4">
-                        Authors of accepted papers will be invited to present their papers orally
-                        at the online workshop as short or long presentation.
-                    </p>
-                    <p class="text-dark-75 mb-4">
-                    As we plan to publish the proceedings with <a href="http://ceur-ws.org">CEUR Workshop Proceedings</a>, all
-                    papers should be formatted in the <a href="https://ceurws.wordpress.com/2020/03/31/ceurws-publishes-ceurart-paper-style/">One-column CEURART style</a>.
-                </p>
-                <p class="text-dark-75 mb-4">
-                Please adhere to a page limit of <em>12 pages excluding references</em> for long
-                papers and <em>6 pages excluding references</em> for short and position papers.  Submissions will
-                be peer-reviewed by at least three members of the programme committee.
-            </p>
-            <p class="text-dark-75 mb-4">
-            To submit your paper, please use our <a href="https://easychair.org/my/conference?conf=birds2021">Easychair submission link</a>.
-        </p>
-    </div>
-</div>
-<h3 class="text-dark mt-0 text-center">Important Dates</h3>
-<p class="text-dark-75 mb-4">
-<b>Submission Deadline:</b> <s>February 1, 2021</s> February 8, 2021 AoE  <b>extended!</b><br/>
-<b>Notification:</b>  asap<br/>
-<b>Camera-ready:</b>  March 16, 2021<br/>
-<b>Workshop:</b>  March 19, 2021 (online)<br/>
-</p>
-</div>
-</section>
--->
-
-<!-- PC -->
-<section class="page-section bg-light3 text-dark" id="organizers">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-auto text-left">
-                <h2 class="text-dark mt-0 text-center">Workshop Organizers</h2>
-                <hr class="divider dark my-4" />
-                <p class="text-dark-75 mb-4">
-                    <b>Programme Chairs (Workshop Organisers)</b>
-                    <ul>
-                        <li><a href="http://www.frommholz.org/">Ingo Frommholz</a>, University of Wolverhampton, UK</li>
-                        <li><a href="https://sites.google.com/view/haimingliu/">Haiming Liu</a>, University of Bedfordshire, UK</li>
-                        <li><a href="https://www.dei.unipd.it/~melo/">Massimo Melucci</a>, University of Padua, Italy</li>
-                    </ul>
-                </p>
-                <p class="text-dark-75 mb-4">
-                    <b>Programme Committee</b><br/>
-                    <ul>
-                        <li>Guillaume Cabanac, IRIT - Université Paul Sabatier Toulouse 3, France</li>
-                        <li>Emanuele Di Buccio, University of Padua, Italy</li>
-                        <li>Catherine Dumas, Simmons University, USA</li>
-                        <li>Edward Fox, Virginia Tech, USA</li>
-                        <li>Paul Mulholland, The Open University, UK</li>
-                        <li>Norbert	Fuhr, University of Duisburg-Essen, Germany</li>
-                        <li>Lorraine Goeuriot, Univ. Grenoble Alpes, CNRS, France</li>
-                        <li>Udo Kruschwitz, University of Regensburg, Germany</li>
-                        <li>Birger Larsen, Aalborg University, Denmark</li>
-                        <li>Hyowon Lee, Dublin City University, Ireland</li>
-                        <li>Philipp	Mayr, GESIS, Cologne, Germany</li>
-                        <li>Thomas Roelleke, Queen Mary University of London, UK</li>
-                        <li>Tony Russell-Rose, 2Dsearch and Goldsmiths, University of London, UK</li>
-                        <li>Sandro Sozzo, School of Business and Research Centre IQSCS</li>
-                        <li>Ingo Schmitt, Technical University Cottbus, Germany</li>
-                        <li>Martin White, Intranet Focus Ltd and University of Sheffield, UK</li>
-                        <li>Hong Qing Yu, University of Derby, UK</li>
-                    </ul>
-                </p>
+                                <b>Programme Chairs (Workshop Organisers)</b>
+                                <ul>
+                                    <li><a href="http://www.frommholz.org/">Ingo Frommholz</a>, University of Wolverhampton, UK</li>
+                                    <li><a href="https://sites.google.com/view/haimingliu/">Haiming Liu</a>, University of Bedfordshire, UK</li>
+                                    <li><a href="https://www.dei.unipd.it/~melo/">Massimo Melucci</a>, University of Padua, Italy</li>
+                                </ul>
+                            </p>
+                            <p class="text-dark-75 mb-4">
+                                <b>Programme Committee</b><br/>
+                                <ul>
+                                    <li>Guillaume Cabanac, IRIT - Université Paul Sabatier Toulouse 3, France</li>
+                                    <li>Emanuele Di Buccio, University of Padua, Italy</li>
+                                    <li>Catherine Dumas, Simmons University, USA</li>
+                                    <li>Edward Fox, Virginia Tech, USA</li>
+                                    <li>Paul Mulholland, The Open University, UK</li>
+                                    <li>Norbert	Fuhr, University of Duisburg-Essen, Germany</li>
+                                    <li>Lorraine Goeuriot, Univ. Grenoble Alpes, CNRS, France</li>
+                                    <li>Udo Kruschwitz, University of Regensburg, Germany</li>
+                                    <li>Birger Larsen, Aalborg University, Denmark</li>
+                                    <li>Hyowon Lee, Dublin City University, Ireland</li>
+                                    <li>Philipp	Mayr, GESIS, Cologne, Germany</li>
+                                    <li>Thomas Roelleke, Queen Mary University of London, UK</li>
+                                    <li>Tony Russell-Rose, 2Dsearch and Goldsmiths, University of London, UK</li>
+                                    <li>Sandro Sozzo, School of Business and Research Centre IQSCS</li>
+                                    <li>Ingo Schmitt, Technical University Cottbus, Germany</li>
+                                    <li>Martin White, Intranet Focus Ltd and University of Sheffield, UK</li>
+                                    <li>Hong Qing Yu, University of Derby, UK</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact -->
+            <section class="page-section bg-light3 text-dark" id="contact">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-auto text-left">
+                            <h2 class="text-dark mt-0 text-center">Contact</h2>
+                            <hr class="divider dark my-4" />
+                            <p class="text-dark-75 mb-4">
+                                If you have any further questions, you can reach out via email to
+                                <a href="mailto:birds2021@easychair.org">birds2021@easychair.org</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer-->
+            <footer class="bg-light-plain py-5">
+                <div class="container"><div class="small text-center text-muted">Based on the <a href="https://startbootstrap.com/themes/creative/">Creative theme </a> available at <a href="https://startbootstrap.com/">Start Bootstrap</a>.<br/>Edited and programmed by Ingo Frommholz.<br/>Image by <a href="https://pixabay.com/users/allthingscoastal-8554979/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Chris "CJ" Johnson</a> from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Pixabay</a></div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Contact -->
-<section class="page-section bg-light3 text-dark" id="contact">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-auto text-left">
-                <h2 class="text-dark mt-0 text-center">Contact</h2>
-                <hr class="divider dark my-4" />
-                <p class="text-dark-75 mb-4">
-                    If you have any further questions, you can reach out via email to
-                    <a href="mailto:birds2021@easychair.org">birds2021@easychair.org</a>.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer-->
-<footer class="bg-light-plain py-5">
-    <div class="container"><div class="small text-center text-muted">Based on the <a href="https://startbootstrap.com/themes/creative/">Creative theme </a> available at <a href="https://startbootstrap.com/">Start Bootstrap</a>.<br/>Edited and programmed by Ingo Frommholz.<br/>Image by <a href="https://pixabay.com/users/allthingscoastal-8554979/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Chris "CJ" Johnson</a> from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Pixabay</a></div>
-</div>
-</div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
