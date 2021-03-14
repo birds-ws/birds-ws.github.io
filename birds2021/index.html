@@ -10,6 +10,10 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon-birds.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Luxon for all timezone issues -->
+    <script src="js/luxon.min.js"></script>
+
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
@@ -50,7 +54,7 @@
                     </p>
                     <p class="text-white-75 font-weight-light mb-5">BIRDS offers a range of <a href="#program">invited talks and accepted peer-reviewed papers</a></p>
                     <p class="text-white-75 font-weight-light mb-5">
-                    <!--    <b>Submission Deadline:</b> <s>February 1, 2021</s> February 8, 2021 AoE <b>extended!</b><br/> -->
+                        <!--    <b>Submission Deadline:</b> <s>February 1, 2021</s> February 8, 2021 AoE <b>extended!</b><br/> -->
                         <!--<b>Notification:</b>  February 28, 2021<br/>
                         <b>Camera-ready:</b>  March 7, 2021<br/> -->
                         <b>March 19, 2021 (online)</b><br/>
@@ -211,7 +215,7 @@
                                             Accepted Papers:
                                             <ul>
                                                 <li>Morshed Adnan, Matthias Hemmje and Michael Alexander Kaufmann. Social Media Mining to Study Social User Groups by Visualizing Tweet Clusters using Word2Vec, PCA and K-Means</li>
-                                                <li>Mahmoud Artemi and Haiming Liu. A User Study on User’s Attention for an Interactive Content-based Image Search System</li>
+                                                <li>Mahmoud Artemi and Haiming Liu. A User Study on User's Attention for an Interactive Content-based Image Search System</li>
                                                 <li>Stefan Wagenpfeil, Felix Engel, Paul McKevitt and Matthias Hemmje. Semantic Query Construction and Result Representation based on Graph Codes</li>
                                                 <li>Nicholas Collis and Ingo Frommholz. AQUACOLD: A Novel Crowdsourced Linked Data Question Answering System</li>
                                                 <li>Ghadeer Abuoda, Chad Hendrix and Stuart Campo. Automatic Tag Recommendation for the UN Humanitarian Data Exchange</li>
@@ -227,124 +231,267 @@
                                                 <li><b>Session 2 Begin:</b> 7:00 (PDT), 9:00 (CDT), 10:00 (EDT), 14:00 (UTC/GMT), 15:00 (CET), 22:00 (CST), 23:00 (JST), 1:00 (AEDT March 20), 3:00 (NZDT March 20)</li>
                                                 <li><b>Session 2 End:</b> 11:00 (PDT), 13:00 (CDT), 14:00 (EDT), 18:00 (UTC/GMT), 19:00 (CET), 2:00 (CST, March 20), 3:00 (JST, March 20), 05:00 (AEDT March 20), 07:00 (NZDT March 20)</li>
                                             </ul>
-                                            A detailed schedule will be published soon. To register, please visit the <a href="https://web.cvent.com/event/c718c2f6-51e3-4f11-bd86-625d0ba8fb2e/summary">CHIIR registration page</a>. The CHIIR registration includes all workshops, incl. BIRDS.
+                                            To register, please visit the <a href="https://web.cvent.com/event/c718c2f6-51e3-4f11-bd86-625d0ba8fb2e/summary">CHIIR registration page</a>. The CHIIR registration includes all workshops, incl. BIRDS.
                                         </p>
+                                        <br/>
+                                        <h2 class="text-dark mt-0 text-center">Tentative Schedule</h2>
+                                        <p class="text-dark-75 mb-4">Please note there might be minor changes in the schedule.</p>
+                                        <p class="text-dark-75 mb-4" id="programPara"></p>
+                                        <p class="text-dark-75 mb-4">
+                                            <table id="programTable">
+                                                <tbody id="programBody"></tbody>
+                                            </table>
+                                            <script>
+                                            // The schdule. Times are UTC.
+                                            const schedule = [
+                                                {
+                                                    "Time": "07:00",
+                                                    "Talk": "Introduction and Welcome"
+                                                },
+                                                {
+                                                    "Time": "07:15",
+                                                    "Talk": "Emanuele Di Buccio: Data Science and Information Access for Social Research on Technoscientific Issues in the Media (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "07:45",
+                                                    "Talk": "Morshed Adnan, Matthias Hemmje and Michael Alexander Kaufmann. Social Media Mining to Study Social User Groups by Visualizing Tweet Clusters using Word2Vec, PCA and K-Means (full paper)"
+                                                },
+                                                {
+                                                    "Time": "08:10",
+                                                    "Talk": "BREAK"
+                                                },
+                                                {
+                                                    "Time": "08:40",
+                                                    "Talk": "Lorraine Goeuriot: Exploiting clinical data to build patients trajectories (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "09:10",
+                                                    "Talk": "Mahmoud Artemi and Haiming Liu. A User Study on User's Attention for an Interactive Content-based Image Search System (full paper)"
+                                                },
+                                                {
+                                                    "Time": "09:35",
+                                                    "Talk": "BREAK"
+                                                },
+                                                {
+                                                    "Time": "10:05",
+                                                    "Talk": "Martin White: Understanding and solving the complex IIR challenges of searching enterprise content (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "10:35",
+                                                    "Talk": "Thoralf Reis, Sebastian Bruchhaus, Binh Vu, Marco X. Bornschlegl and Matthias L. Hemmje. Towards Modeling AI-based User Empowerment for Visual Big Data Analysis (short paper)"
+                                                },
+                                                {
+                                                    "Time": "10:50",
+                                                    "Talk": "BREAK"
+                                                },
+                                                {
+                                                    "Time": "11:05",
+                                                    "Talk": "Tobias Eljasik-Swoboda: Querying by Example Using Bootstrapped Explainable Text Categorization in Emergent Knowledge-Domains (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "",
+                                                    "Talk": "SESSION BREAK"
+                                                },
+                                                {
+                                                    "Time": "14:00",
+                                                    "Talk": "Welcome Back!"
+                                                },
+                                                {
+                                                    "Time": "14:05",
+                                                    "Talk": "Ed Fox: User Discovery and Exploration in Future Digital Libraries (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "14:35",
+                                                    "Talk": "Ghadeer Abuoda, Chad Hendrix and Stuart Campo. Automatic Tag Recommendation for the UN Humanitarian Data Exchange (short paper)"
+                                                },
+                                                {
+                                                    "Time": "14:50",
+                                                    "Talk": "BREAK"
+                                                },
+                                                {
+                                                    "Time": "15:20",
+                                                    "Talk": "Tony Russell-Rose: Searching, fast and slow (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "15:50",
+                                                    "Talk": "Stefan Wagenpfeil, Felix Engel, Paul McKevitt and Matthias Hemmje. Semantic Query Construction and Result Representation based on Graph Codes (full paper)"
+                                                },
+                                                {
+                                                    "Time": "16:15",
+                                                    "Talk": "BREAK"
+                                                },
+                                                {
+                                                    "Time": "16:30",
+                                                    "Talk": "Kevin Berwind. Design of use case diagrams and personas based on the CRISP4BigData process /  Conceptual Design and Implementation of a graphical user interface for CRISP4BigData (invited talk)"
+                                                },
+                                                {
+                                                    "Time": "17:00",
+                                                    "Talk": "Nicholas Collis and Ingo Frommholz. AQUACOLD: A Novel Crowdsourced Linked Data Question Answering System (full paper)"
+                                                },
+                                                {
+                                                    "Time": "17:25",
+                                                    "Talk": "Wrap-up / Closing"
+                                                }
+                                            ];
+
+                                            function loadTableData(items) {
+                                                var DateTime = luxon.DateTime;
+                                                const pTable = document.getElementById("programTable");
+                                                const pProgram = document.getElementById("programPara");
+                                                var head = pTable.createTHead();
+                                                let rowH = head.insertRow(0);
+                                                let timeH = rowH.insertCell(0);
+                                                let timeU = rowH.insertCell(1);
+                                                let talkH = rowH.insertCell(2);
+                                                let localZone = DateTime.local().zoneName;
+                                                pProgram.innerHTML= "Your browser timezone is ".concat(localZone, ".")
+                                                timeH.innerHTML = "<b>Time".concat(" (", localZone, ")</b>");
+                                                timeU.innerHTML = "<b>Time (UTC/GMT)</b>";
+                                                talkH.innerHTML = "<b>Talk</b>";
+
+                                                const table = document.getElementById("programBody");
+                                                items.forEach( item => {
+                                                    if (item.Time) {
+                                                        let row = table.insertRow();
+                                                        let time = row.insertCell(0);
+                                                        let timeUTC = row.insertCell(1);
+                                                        let utcTime = new DateTime.fromISO("2021-03-19T".concat(item.Time), { zone: "UTC" });
+                                                        timeUTC.innerHTML = utcTime.toLocaleString(DateTime.TIME_SIMPLE);
+                                                        //let t = utc.setZone("Europe/Paris");
+                                                        //let t = utc.setZone("America/Los_Angeles");
+                                                        let t = utcTime.setZone(localZone);
+                                                        console.log(t.zoneName);
+                                                        time.innerHTML = t.toLocaleString(DateTime.TIME_SIMPLE); //=> '11:32 AM';
+                                                        let talk = row.insertCell(2);
+                                                        talk.innerHTML = item.Talk;
+                                                    }
+                                                    else {
+                                                        let row = table.insertRow();
+                                                        row.insertCell(0);
+                                                        row.insertCell(1);
+                                                        let talk = row.insertCell(2);
+                                                        talk.innerHTML = item.Talk;
+                                                    }
+                                                });
+                                            }
+                                            loadTableData(schedule);
+                                            </script>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
 
 
-                        <!-- Submission-->
-                        <!--
-                        <section class="page-section bg-light2 text-dark" id="submission">
+                            <!-- Submission-->
+                            <!--
+                            <section class="page-section bg-light2 text-dark" id="submission">
                             <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-auto text-left">
-                                        <h2 class="text-dark mt-0 text-center">Submission and Dates</h2>
-                                        <hr class="divider dark my-4" />
-                                        <p class="text-dark-75 mb-4">
-                                            We are calling for <em>long (12 pages)</em> and <em>short research papers (6 pages)</em> as well
-                                            as <em>position papers (6 pages)</em> describing new research ideas.
-                                        </p>
-                                        <p class="text-dark-75 mb-4">
-                                            Authors of accepted papers will be invited to present their papers orally
-                                            at the online workshop as short or long presentation.
-                                        </p>
-                                        <p class="text-dark-75 mb-4">
-                                            As we plan to publish the proceedings with <a href="http://ceur-ws.org">CEUR Workshop Proceedings</a>, all
-                                            papers should be formatted in the <a href="https://ceurws.wordpress.com/2020/03/31/ceurws-publishes-ceurart-paper-style/">One-column CEURART style</a>.
-                                        </p>
-                                        <p class="text-dark-75 mb-4">
-                                            Please adhere to a page limit of <em>12 pages excluding references</em> for long
-                                            papers and <em>6 pages excluding references</em> for short and position papers.  Submissions will
-                                            be peer-reviewed by at least three members of the programme committee.
-                                        </p>
-                                        <p class="text-dark-75 mb-4">
-                                            To submit your paper, please use our <a href="https://easychair.org/my/conference?conf=birds2021">Easychair submission link</a>.
-                                        </p>
-                                    </div>
-                                </div>
-                                <h3 class="text-dark mt-0 text-center">Important Dates</h3>
-                                <p class="text-dark-75 mb-4">
-                                    <b>Submission Deadline:</b> <s>February 1, 2021</s> February 8, 2021 AoE  <b>extended!</b><br/>
-                                    <b>Notification:</b>  asap<br/>
-                                    <b>Camera-ready:</b>  March 16, 2021<br/>
-                                    <b>Workshop:</b>  March 19, 2021 (online)<br/>
-                                </p>
-                            </div>
-                        </section>
+                            <div class="row justify-content-center">
+                            <div class="col-lg-auto text-left">
+                            <h2 class="text-dark mt-0 text-center">Submission and Dates</h2>
+                            <hr class="divider dark my-4" />
+                            <p class="text-dark-75 mb-4">
+                            We are calling for <em>long (12 pages)</em> and <em>short research papers (6 pages)</em> as well
+                            as <em>position papers (6 pages)</em> describing new research ideas.
+                        </p>
+                        <p class="text-dark-75 mb-4">
+                        Authors of accepted papers will be invited to present their papers orally
+                        at the online workshop as short or long presentation.
+                    </p>
+                    <p class="text-dark-75 mb-4">
+                    As we plan to publish the proceedings with <a href="http://ceur-ws.org">CEUR Workshop Proceedings</a>, all
+                    papers should be formatted in the <a href="https://ceurws.wordpress.com/2020/03/31/ceurws-publishes-ceurart-paper-style/">One-column CEURART style</a>.
+                </p>
+                <p class="text-dark-75 mb-4">
+                Please adhere to a page limit of <em>12 pages excluding references</em> for long
+                papers and <em>6 pages excluding references</em> for short and position papers.  Submissions will
+                be peer-reviewed by at least three members of the programme committee.
+            </p>
+            <p class="text-dark-75 mb-4">
+            To submit your paper, please use our <a href="https://easychair.org/my/conference?conf=birds2021">Easychair submission link</a>.
+        </p>
+    </div>
+</div>
+<h3 class="text-dark mt-0 text-center">Important Dates</h3>
+<p class="text-dark-75 mb-4">
+<b>Submission Deadline:</b> <s>February 1, 2021</s> February 8, 2021 AoE  <b>extended!</b><br/>
+<b>Notification:</b>  asap<br/>
+<b>Camera-ready:</b>  March 16, 2021<br/>
+<b>Workshop:</b>  March 19, 2021 (online)<br/>
+</p>
+</div>
+</section>
 -->
 
-                        <!-- PC -->
-                        <section class="page-section bg-light3 text-dark" id="organizers">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-auto text-left">
-                                        <h2 class="text-dark mt-0 text-center">Workshop Organizers</h2>
-                                        <hr class="divider dark my-4" />
-                                        <p class="text-dark-75 mb-4">
-                                            <b>Programme Chairs (Workshop Organisers)</b>
-                                            <ul>
-                                                <li><a href="http://www.frommholz.org/">Ingo Frommholz</a>, University of Wolverhampton, UK</li>
-                                                <li><a href="https://sites.google.com/view/haimingliu/">Haiming Liu</a>, University of Bedfordshire, UK</li>
-                                                <li><a href="https://www.dei.unipd.it/~melo/">Massimo Melucci</a>, University of Padua, Italy</li>
-                                            </ul>
-                                        </p>
-                                        <p class="text-dark-75 mb-4">
-                                            <b>Programme Committee</b><br/>
-                                            <ul>
-                                                <li>Guillaume Cabanac, IRIT - Université Paul Sabatier Toulouse 3, France</li>
-                                                <li>Emanuele Di Buccio, University of Padua, Italy</li>
-                                                <li>Catherine Dumas, Simmons University, USA</li>
-                                                <li>Edward Fox, Virginia Tech, USA</li>
-                                                <li>Paul Mulholland, The Open University, UK</li>
-                                                <li>Norbert	Fuhr, University of Duisburg-Essen, Germany</li>
-                                                <li>Lorraine Goeuriot, Univ. Grenoble Alpes, CNRS, France</li>
-                                                <li>Udo Kruschwitz, University of Regensburg, Germany</li>
-                                                <li>Birger Larsen, Aalborg University, Denmark</li>
-                                                <li>Hyowon Lee, Dublin City University, Ireland</li>
-                                                <li>Philipp	Mayr, GESIS, Cologne, Germany</li>
-                                                <li>Thomas Roelleke, Queen Mary University of London, UK</li>
-                                                <li>Tony Russell-Rose, 2Dsearch and Goldsmiths, University of London, UK</li>
-                                                <li>Sandro Sozzo, School of Business and Research Centre IQSCS</li>
-                                                <li>Ingo Schmitt, Technical University Cottbus, Germany</li>
-                                                <li>Martin White, Intranet Focus Ltd and University of Sheffield, UK</li>
-                                                <li>Hong Qing Yu, University of Derby, UK</li>
-                                            </ul>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Contact -->
-                        <section class="page-section bg-light3 text-dark" id="contact">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-auto text-left">
-                                        <h2 class="text-dark mt-0 text-center">Contact</h2>
-                                        <hr class="divider dark my-4" />
-                                        <p class="text-dark-75 mb-4">
-                                            If you have any further questions, you can reach out via email to
-                                            <a href="mailto:birds2021@easychair.org">birds2021@easychair.org</a>.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Footer-->
-                        <footer class="bg-light-plain py-5">
-                            <div class="container"><div class="small text-center text-muted">Based on the <a href="https://startbootstrap.com/themes/creative/">Creative theme </a> available at <a href="https://startbootstrap.com/">Start Bootstrap</a>.<br/>Edited by Ingo Frommholz.<br/>Image by <a href="https://pixabay.com/users/allthingscoastal-8554979/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Chris "CJ" Johnson</a> from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Pixabay</a></div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- Bootstrap core JS-->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-                <!-- Third party plugin JS-->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-                <!-- Core theme JS-->
-                <script src="js/scripts.js"></script>
-            </body>
-            </html>
+<!-- PC -->
+<section class="page-section bg-light3 text-dark" id="organizers">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-auto text-left">
+                <h2 class="text-dark mt-0 text-center">Workshop Organizers</h2>
+                <hr class="divider dark my-4" />
+                <p class="text-dark-75 mb-4">
+                    <b>Programme Chairs (Workshop Organisers)</b>
+                    <ul>
+                        <li><a href="http://www.frommholz.org/">Ingo Frommholz</a>, University of Wolverhampton, UK</li>
+                        <li><a href="https://sites.google.com/view/haimingliu/">Haiming Liu</a>, University of Bedfordshire, UK</li>
+                        <li><a href="https://www.dei.unipd.it/~melo/">Massimo Melucci</a>, University of Padua, Italy</li>
+                    </ul>
+                </p>
+                <p class="text-dark-75 mb-4">
+                    <b>Programme Committee</b><br/>
+                    <ul>
+                        <li>Guillaume Cabanac, IRIT - Université Paul Sabatier Toulouse 3, France</li>
+                        <li>Emanuele Di Buccio, University of Padua, Italy</li>
+                        <li>Catherine Dumas, Simmons University, USA</li>
+                        <li>Edward Fox, Virginia Tech, USA</li>
+                        <li>Paul Mulholland, The Open University, UK</li>
+                        <li>Norbert	Fuhr, University of Duisburg-Essen, Germany</li>
+                        <li>Lorraine Goeuriot, Univ. Grenoble Alpes, CNRS, France</li>
+                        <li>Udo Kruschwitz, University of Regensburg, Germany</li>
+                        <li>Birger Larsen, Aalborg University, Denmark</li>
+                        <li>Hyowon Lee, Dublin City University, Ireland</li>
+                        <li>Philipp	Mayr, GESIS, Cologne, Germany</li>
+                        <li>Thomas Roelleke, Queen Mary University of London, UK</li>
+                        <li>Tony Russell-Rose, 2Dsearch and Goldsmiths, University of London, UK</li>
+                        <li>Sandro Sozzo, School of Business and Research Centre IQSCS</li>
+                        <li>Ingo Schmitt, Technical University Cottbus, Germany</li>
+                        <li>Martin White, Intranet Focus Ltd and University of Sheffield, UK</li>
+                        <li>Hong Qing Yu, University of Derby, UK</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact -->
+<section class="page-section bg-light3 text-dark" id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-auto text-left">
+                <h2 class="text-dark mt-0 text-center">Contact</h2>
+                <hr class="divider dark my-4" />
+                <p class="text-dark-75 mb-4">
+                    If you have any further questions, you can reach out via email to
+                    <a href="mailto:birds2021@easychair.org">birds2021@easychair.org</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="bg-light-plain py-5">
+    <div class="container"><div class="small text-center text-muted">Based on the <a href="https://startbootstrap.com/themes/creative/">Creative theme </a> available at <a href="https://startbootstrap.com/">Start Bootstrap</a>.<br/>Edited by Ingo Frommholz.<br/>Image by <a href="https://pixabay.com/users/allthingscoastal-8554979/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Chris "CJ" Johnson</a> from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4250865">Pixabay</a></div>
+</div>
+</div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+</html>
